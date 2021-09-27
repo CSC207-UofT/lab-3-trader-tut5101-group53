@@ -8,7 +8,7 @@ public class HondaTest {
 
     @Before
     public void setUp() throws Exception {
-        h = new Honda("red", 180, 20000.0);
+        h = new Honda("red", 180, 20000);
     }
 
     @Test(timeout = 50)
@@ -30,7 +30,7 @@ public class HondaTest {
 
     @Test(timeout = 50)
     public void TestGetPrice() {
-        assertEquals(20000.0, h.getPrice());
+        assertEquals(20000, h.getPrice());
     }
 
 }

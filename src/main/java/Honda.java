@@ -4,9 +4,9 @@
 public class Honda implements Tradable, Drivable {
     private String color;
     private int maxSpeed;
-    private double price;
+    private int price;
 
-    public Honda(String color, int maxspeed, double price) {
+    public Honda(String color, int maxspeed, int price) {
         this.color = color;
         this.maxSpeed = maxspeed;
         this.price = price;
