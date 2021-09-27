@@ -1,4 +1,4 @@
-public class Lion implements Domesticatable, Tradable{
+public class Dolphin implements Domesticatable, Tradable{
 
     public Dolphin(){
         int maxSpeed = 400;
