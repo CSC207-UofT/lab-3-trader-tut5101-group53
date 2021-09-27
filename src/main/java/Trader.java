@@ -22,6 +22,7 @@ public class Trader {
      *                  either this Trader's inventory or wishlist.
      */
     public Trader(List<Tradable> item_list) {
+        // list of tradables passed in, NOT an array!
         // Select a random number between [20, 120) for money
         Random randomizer = new Random();
         this.money = randomizer.nextInt(100) + 20;
@@ -64,6 +65,8 @@ public class Trader {
      */
     public boolean sellTo(Trader other) {
         boolean sold_at_least_one = false;
+
+        // accumulate list of stuff Trader can sell to other
         List<Tradable> temp = new ArrayList<>();
 
         for (Tradable item : this.inventory) {
@@ -73,8 +76,13 @@ public class Trader {
             }
         }
 
+        // remove stuff that was sold to other
         this.inventory.removeAll(temp);
+
+        // add sold stuff to inventory of other
         other.inventory.addAll(temp);
+
+        // remove stuff sold to other from other's wishlist
         other.wishlist.removeAll(temp);
 
         return sold_at_least_one;
@@ -97,6 +105,7 @@ public class Trader {
                 new Horse(),
                 new Horse(),
                 new Horse(),
+                new Honda("green", 200, 50000)
                 new Donkey(),
                 new Donkey()
         );
